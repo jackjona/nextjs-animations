@@ -4,10 +4,11 @@ Experimenting with different Next.js animations. Using Tailwind CSS and Motion (
 
 ## Animations
 
-- Link underline animation on hover
+- Link underline animation on hover (seen with the header links on hover)
 - Entrance animation for the homepage (can also be used for page transition)
+- Smooth Hr line reveal animation
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
