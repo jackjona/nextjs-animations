@@ -4,7 +4,9 @@ import AnimatedHR from "@/components/AnimateHR";
 export default function Page1() {
   return (
     <div class="py-8">
-      <h1 className="text-4xl font-bold mx-4">Smooth Reveal HR Animation</h1>
+      <h1 className="text-6xl font-extrabold uppercase tracking-tighter mx-4">
+        Smooth Reveal HR Animation
+      </h1>
       <div className="my-4">
         <AnimatedHR />
       </div>

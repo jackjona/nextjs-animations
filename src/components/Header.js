@@ -1,4 +1,5 @@
 import Link from "next/link";
+import projectList from "@/data/projectList.json";
 
 export default function Header() {
   return (
@@ -10,30 +11,17 @@ export default function Header() {
         >
           Home
         </Link>
-        <Link
-          href="/hr"
-          className="relative after:absolute after:bg-slate-900 after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full transition-all duration-150 after:duration-150 hover:scale-105"
-        >
-          Hr Animation
-        </Link>
-        <Link
-          href="/image-reveal"
-          className="relative after:absolute after:bg-slate-900 after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full transition-all duration-150 after:duration-150 hover:scale-105"
-        >
-          Image Reveal
-        </Link>
-        <Link
-          href="/about"
-          className="relative after:absolute after:bg-slate-900 after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full transition-all duration-150 after:duration-150 hover:scale-105"
-        >
-          About
-        </Link>
-        <Link
-          href="/contact"
-          className="transition-all relative after:absolute after:bg-black after:h-0.5 after:w-0 after:duration-150 after:bottom-0 after:left-0 hover:after:w-full"
-        >
-          Contact
-        </Link>
+        {projectList
+          .filter(({ header }) => header) // check if header is true
+          .map(({ name, link, archive }) => (
+            <Link
+              key={link}
+              href={link}
+              className="relative after:absolute after:bg-slate-900 after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full transition-all duration-150 after:duration-150 hover:scale-105"
+            >
+              {name}
+            </Link>
+          ))}
       </div>
     </header>
   );

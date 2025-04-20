@@ -6,17 +6,28 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import Lenis from "lenis";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-export default function ParallaxImage() {
+export default function ImageReveal() {
   useEffect(() => {
     const lenis = new Lenis({ autoRaf: true });
+
     // Recursive animation frame to update Lenis on every frame
+    let rafId;
     const raf = (time) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     };
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
+
+    // Clean up with cancelAnimationFrame and lenis.destroy()
+    return () => {
+      cancelAnimationFrame(rafId);
+      if (lenis.destroy) {
+        lenis.destroy();
+      }
+    };
   }, []);
 
   // Reference for the scroll container
@@ -65,19 +76,20 @@ export default function ParallaxImage() {
   return (
     <main>
       {/* Scroll container */}
-      <div ref={scrollRef} className="relative h-[230vh] mt-19 bg-[#FAF9F6]">
+      <div
+        ref={scrollRef}
+        className="relative h-[230vh] mt-19 bg-[#FAF9F6] text-center"
+      >
         <div className="sticky top-0 h-screen">
           {/* Animated background image with parallax effect */}
           <motion.img
             className="absolute inset-0 -z-10 h-screen w-full"
             style={{ y: imageDown }}
-            src="https://picsum.photos/1424/960" // Random image source
+            src="https://picsum.photos/1424/960" // Random image
             alt=""
             aria-hidden="true"
           />
-          {/*  <motion.p className="text-2xl font-serif flex w-full min-h-screen justify-center items-center text-white">
-            Random Example Image
-          </motion.p> */}
+
           {/* Overlay content with animated clip-path transformation */}
           <motion.div
             className="absolute inset-0 flex flex-col items-center bg-[#FAF9F6] -top-19"
@@ -92,10 +104,14 @@ export default function ParallaxImage() {
             </motion.h1>
             {/* Paragraph with fade-out effect */}
             <motion.p
-              className="text-2xl font-serif"
+              className="text-2xl font-serif px-2"
               style={{ opacity: fadeOut }}
             >
-              Expand and reveal image effect on scroll
+              Expand and reveal image effect on scroll. Check out{" "}
+              <Link href="expanding-box" className="hover:underline">
+                /expanding-box
+              </Link>{" "}
+              for a newer version.
             </motion.p>
           </motion.div>
         </div>
