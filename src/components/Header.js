@@ -17,10 +17,10 @@ export default function Header() {
           Hr Animation
         </Link>
         <Link
-          href="/projects"
+          href="/image-reveal"
           className="relative after:absolute after:bg-slate-900 after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full transition-all duration-150 after:duration-150 hover:scale-105"
         >
-          Projects
+          Image Reveal
         </Link>
         <Link
           href="/about"
