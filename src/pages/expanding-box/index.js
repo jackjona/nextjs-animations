@@ -16,25 +16,35 @@ export default function ExpandingBox() {
   const shouldReduceMotion = useReducedMotion();
 
   // Animate width & height - the size of the initial and final box can be adjusted here
-  const size = shouldReduceMotion
-    ? "50vw"
-    : useTransform(scrollYProgress, [0, 1], ["50vw", "90vw"]);
+  const sizeAnimated = useTransform(scrollYProgress, [0, 1], ["50vw", "90vw"]);
+  const sizeStatic = "50vw";
+  const size = shouldReduceMotion ? sizeStatic : sizeAnimated;
 
   // Configure animated slide-up transformation for the heading.
-  const slideUp = useTransform(
+  const slideUpAnimated = useTransform(
     scrollYProgress,
     [0, 0.2],
-    shouldReduceMotion ? ["0%", "0%"] : ["0%", "-100%"]
+    ["0%", "-100%"]
   );
+  const slideUpStatic = "0%";
+  const slideUp = shouldReduceMotion ? slideUpStatic : slideUpAnimated;
 
   // Animate text opacity and movement
+  const textOpacityAnimated = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const textOpacityStatic = 1;
   const textOpacity = shouldReduceMotion
-    ? 1
-    : useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    ? textOpacityStatic
+    : textOpacityAnimated;
 
+  const textTranslateYAnimated = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    ["0px", "-50px"]
+  );
+  const textTranslateYStatic = "0px";
   const textTranslateY = shouldReduceMotion
-    ? "0px"
-    : useTransform(scrollYProgress, [0, 0.5], ["0px", "-50px"]);
+    ? textTranslateYStatic
+    : textTranslateYAnimated;
 
   return (
     <main>
@@ -69,7 +79,7 @@ export default function ExpandingBox() {
           {showImage ? (
             <motion.img
               style={{ width: size, height: size }}
-              src="https://picsum.photos/1424/960" // Random image
+              src="https://picsum.photos/1424/960" // Random placeholder image
               alt="Random"
               aria-hidden="true"
             />
