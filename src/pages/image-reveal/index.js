@@ -1,4 +1,5 @@
 // Inspired by: sonsanddaughters.xyz
+// Lenis is used here
 import {
   motion,
   useScroll,

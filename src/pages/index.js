@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div
-      className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col justify-center items-center row-start-2 ">
-        <h1 className="text-8xl font-bold pb-10">Projects/Animations</h1>
+    <>
+      <main className="flex flex-col justify-center items-center min-h-screen mx-auto text-center">
+        <h1 className="text-7xl font-bold pb-10 break-all ">
+          Projects/Animation
+        </h1>
 
         <div className="flex flex-col cursor-pointer text-2xl">
           {projectList.map(({ name, link, archived }) => (
@@ -21,6 +21,6 @@ export default function Home() {
           ))}
         </div>
       </main>
-    </div>
+    </>
   );
 }

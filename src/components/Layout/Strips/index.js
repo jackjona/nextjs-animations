@@ -26,7 +26,7 @@ export default function Layout({ children, backgroundColor }) {
             <motion.div
               key={i}
               {...anim(expand, columnNumber - i)}
-              className="relative h-full w-full bg-slate-900"
+              className="relative h-full w-full bg-blue-900 dark:bg-blue-900"
             />
           );
         })}

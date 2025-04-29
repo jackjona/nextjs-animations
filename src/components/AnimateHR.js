@@ -19,7 +19,7 @@ export default function AnimatedHR() {
         delay: 0.25,
         ease: [0.25, 0.8, 0.25, 1],
       }}
-      className="border-t-2 border-black"
+      className="border-t-2 border-black dark:border-white"
       aria-hidden="true"
     />
   );

@@ -7,7 +7,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <Header />
-      <body className="antialiased bg-[#FAF9F6]">
+      <body className="antialiased bg-[#FAF9F6] dark:bg-slate-900 text-black dark:text-white">
         <Main />
         <NextScript />
       </body>

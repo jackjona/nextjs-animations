@@ -1,3 +1,5 @@
+// An improved version of /image-reveal
+// Lenis is not used
 import {
   motion,
   useScroll,
@@ -79,7 +81,8 @@ export default function ExpandingBox() {
           {showImage ? (
             <motion.img
               style={{ width: size, height: size }}
-              src="https://picsum.photos/1424/960" // Random placeholder image
+              src="/images/expanding-image.jpg" // Image from Unsplash
+              // src="https://picsum.photos/2160" // To get a random placeholder image
               alt="Random"
               aria-hidden="true"
             />
