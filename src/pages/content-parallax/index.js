@@ -78,7 +78,7 @@ const TextParallaxContent = ({
     <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12">
       <h2 className="col-span-1 text-3xl font-bold">{contentHeading}</h2>
       <div className="col-span-1 md:col-span-8">
-        <p className="mb-4 text-xl text-neutral-600 md:text-2xl pb-10">
+        <p className="mb-4 text-xl text-neutral-600 dark:text-neutral-300 md:text-2xl pb-10">
           {contentText}
         </p>
         <a
@@ -131,7 +131,7 @@ export default function ContentParallax() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="">
       {/* Header Section */}
       <div className="flex flex-col justify-center px-20 py-20 text-center">
         <h1 className="text-6xl font-extrabold uppercase tracking-tighter">
