@@ -8,6 +8,7 @@ Experimenting with different Next.js animations. Using Tailwind CSS and Motion (
 - Entrance animation (can also be used for page transition) [seen on `/page-transition` page]
 - Smooth Hr line reveal animation [seen on the `/hr` page]
 - Expand and reveal box/image on scroll animations [seen on the `/expanding-box` page]
+- Content Parallax (based on: https://www.youtube.com/watch?v=UUhoCb5nagY) [seen on the `/content-parallax` page]
 
 ## To Do
 

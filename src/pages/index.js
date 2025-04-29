@@ -9,7 +9,7 @@ export default function Home() {
           Projects/Animation
         </h1>
 
-        <div className="flex flex-col cursor-pointer text-2xl">
+        <div className="flex flex-col cursor-pointer text-2xl text-start">
           {projectList.map(({ name, link, archived }) => (
             <Link
               key={link}

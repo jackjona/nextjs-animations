@@ -1,8 +1,9 @@
 [
+  { "name": "Home", "link": "/", "header": true },
   { "name": "Hr Animation", "link": "/hr", "header": true },
   { "name": "Expanding Box", "link": "/expanding-box", "header": true },
   { "name": "Page Transition", "link": "/page-transition", "header": true },
-  { "name": "About", "link": "/about", "header": true },
+  { "name": "Content Parallax", "link": "/content-parallax", "header": true },
   {
     "name": "Image Reveal",
     "link": "/image-reveal",
